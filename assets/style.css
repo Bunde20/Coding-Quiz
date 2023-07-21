@@ -1,5 +1,5 @@
 body {
-    background-color: lightblue;
+    background-color: rgb(86, 200, 238);
 }
 
 * {
@@ -39,6 +39,22 @@ h2 {
     text-align: center;
     margin-bottom: 1rem;
     color: black;
-    background-color: red;
+    background-color: rgb(241, 63, 241);
+    border-radius: 5px;
+    text-decoration: none;
+}
 
+.btn:hover {
+    cursor: pointer;
+    transition: transform 150ms;
+    transform: scale(1.05);
+}
+
+.btn[disabled]:hover {
+    cursor: none;
+    transform: none;
+}
+
+#highscore-btn {
+    background: gold;
 }
