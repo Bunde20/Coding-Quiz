@@ -4,6 +4,12 @@ var quizSection = document.querySelector(".quizSection")
 quizSection.style.display = "none"
 var endSection = document.querySelector(".endSection")
 endSection.style.display = "none"
+var questionEl = document.querySelector(".questionEl")
+var answersList = document.querySelector(".answersList")
+var timeLeftEl = document.querySelector(".timeLeftEl")
+var output = document.querySelector(".output")
+var input = document.querySelector(".input")
+var submitBtn = document.querySelector(".submitBtn")
 
 var index = 0;
 var score = 0;
@@ -71,5 +77,23 @@ function startQuiz(index) {
                 endQuiz()
             } 
         })
+    })
+}
+
+var previousScores = JSON.parse(localStorage.getItem("scores")) || []
+
+function endQuiz() {
+    quizSection.style.display = "none"
+    endSection.style.display = "block"
+    output.innerHTML = "You got a score of: " + score;
+
+    submitBtn.addEventListener("click", function() {
+        var userInfo = {
+            initials: input.value,
+            score: score
+        }
+        previousScores.push(userInfo)
+        localStorage.setItem("scores", JSON.stringify(previousScores))
+        window.location.reload()
     })
 }
