@@ -5,6 +5,10 @@ quizSection.style.display = "none"
 var endSection = document.querySelector(".endSection")
 endSection.style.display = "none"
 
+var index = 0;
+var score = 0;
+var time = 60;
+
 var quizData = [
     {
         questions: "Commonly used data types DO NOT include:",
@@ -43,3 +47,29 @@ startBtn.addEventListener("click", function () {
     }, 1000)
     startQuiz(index)
 })
+
+function startQuiz(index) {
+    answersList.innerHTML = ""
+    questionEl.innerHTML = quizData[index].questions
+    var answerSet = quizData[index].answers
+    answerSet.forEach(function(value) {
+        var li = document.createElement("li")
+        li.innerHTML = value
+        answersList.append(li)
+        li.addEventListener("click", function(event) {
+            var clicked = event.target.innerHTML
+            if(clicked === quizData[index].correct) {
+                score = score + 20
+            } else {
+                time = time - 10 // Subtract 10s for wrong answer
+            }
+            index++
+            if(index <= quizData.length - 1) {
+                startQuiz(index)
+            } else {
+                index = 0;
+                endQuiz()
+            } 
+        })
+    })
+}
