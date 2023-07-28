@@ -45,7 +45,6 @@ h3 {
     flex-direction: column;
     max-width: 80rem;
     margin: 5% 25%;
-    /* padding: 2rem; */
 }
 
 .endInfo {
@@ -61,11 +60,9 @@ h3 {
 .submitInfo {
     width: 100vw;
     display: flex;
-    /* justify-content: center; */
     flex-direction: row;
     max-width: 80rem;
     margin: 0 31%;
-    /* padding: 2rem; */
 }
 
 /* Li styling for questions */
@@ -110,10 +107,8 @@ li:hover {
 .submitBtn {
     display: flex;
     font-size: 2.5rem;
-    /* padding: 1rem 0; */
     width: 15rem;
     justify-content: center;
-    /* margin-top: 3%; */
     color: white;
     background-color: darkblue;
     border-radius: 5px;
@@ -135,7 +130,6 @@ li:hover {
 }
 
 /* High scores page */
-
 .goBack {
     font-size: large;
     margin-bottom: 2%;
@@ -154,4 +148,11 @@ li:hover {
 
 .text h1 {
     margin-bottom: 1%;
+}
+
+/* Answer response pop-up */
+h2 {
+    justify-content: center;
+    text-align: center;
+    font-size: x-large;
 }
