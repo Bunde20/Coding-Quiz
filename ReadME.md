@@ -14,7 +14,8 @@
     - When all questions are answered or the timer reaches 0, the user is prompted with a screen displaying their score and gives them the opportunity to enter their initials to save it for future reference. 
 
 ## Usage:
-![Project Template](https://github.com/Bunde20/Steven-Bundes-Portfolio/assets/135177057/8c1c5924-51bc-4cfa-ad72-a19b5c6d72a2)
+![Mock-up](https://github.com/Bunde20/Coding-Quiz/assets/135177057/dc313269-1322-40dd-9d33-f46a084ae371)
+
 
 ## Deployed Application Link:
 Here is a link to the deployed application: https://bunde20.github.io/Steven-Bundes-Portfolio/
