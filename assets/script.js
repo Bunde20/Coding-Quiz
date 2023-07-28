@@ -43,7 +43,6 @@ var quizData = [
     }
 ]
 
-
 startBtn.addEventListener("click", function () {
     introSection.style.display = "none"
     quizSection.style.display = "block"
@@ -53,6 +52,23 @@ startBtn.addEventListener("click", function () {
     }, 1000)
     startQuiz(index)
 })
+
+function createFeedbackContainer(isCorrect) {
+    var feedbackContainer = document.createElement("div");
+    feedbackContainer.classList.add("feedback-container");
+
+    var feedbackText = document.createElement("h2");
+    feedbackText.textContent = isCorrect ? "Correct!" : "Wrong!";
+    feedbackText.classList.add("feedback-text");
+
+    feedbackContainer.appendChild(feedbackText);
+    document.body.appendChild(feedbackContainer);
+
+    // Remove the feedback container after a short delay (e.g., 1.5 seconds)
+    setTimeout(function () {
+        feedbackContainer.remove();
+    }, 1000);
+}
 
 function startQuiz(index) {
     answersList.innerHTML = ""
@@ -65,9 +81,11 @@ function startQuiz(index) {
         li.addEventListener("click", function(event) {
             var clicked = event.target.innerHTML
             if(clicked === quizData[index].correct) {
-                score = score + 20
+                score = score + 20 //Add 20 points if correct
+                createFeedbackContainer(true); // Display Correct!
             } else {
                 time = time - 10 // Subtract 10s for wrong answer
+                createFeedbackContainer(false); //Display Wrong!
             }
             index++
             if(index <= quizData.length - 1) {
@@ -79,6 +97,10 @@ function startQuiz(index) {
         })
     })
 }
+
+
+
+
 
 var previousScores = JSON.parse(localStorage.getItem("scores")) || []
 

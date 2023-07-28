@@ -94,7 +94,7 @@ li:hover {
 }
 
 /* Buttons */
-.startBtn {
+.startBtn, .clearBtn {
     display: flex;
     font-size: 2.5rem;
     padding: 1rem 0;
@@ -132,4 +132,26 @@ li:hover {
     width: 30%;
     display: inline-block;
     font-size: 25px;
+}
+
+/* High scores page */
+
+.goBack {
+    font-size: large;
+    margin-bottom: 2%;
+}
+
+.text {
+    font-size: large;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 80rem;
+    margin: .5% 30%;
+    padding: 2rem;
+}
+
+.text h1 {
+    margin-bottom: 1%;
 }
