@@ -48,9 +48,14 @@ startBtn.addEventListener("click", function () {
     quizSection.style.display = "block"
     setInterval(function() {
         time--;
-        timeLeftEl.innerHTML = time
+        timeLeftEl.innerHTML = time;
+        if (time <= 0) {
+            clearInterval();
+            index = 0;
+            endQuiz();
+        }
     }, 1000)
-    startQuiz(index)
+    startQuiz(index);
 })
 
 function createFeedbackContainer(isCorrect) {
@@ -64,7 +69,6 @@ function createFeedbackContainer(isCorrect) {
     feedbackContainer.appendChild(feedbackText);
     document.body.appendChild(feedbackContainer);
 
-    // Remove the feedback container after a short delay (e.g., 1.5 seconds)
     setTimeout(function () {
         feedbackContainer.remove();
     }, 1000);
